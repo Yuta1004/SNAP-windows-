@@ -26,7 +26,9 @@ http://phantomjs.org/ からPhantomJSをダウンロードした後、Cドライ
 
 - **Selenium**が必要です  
   - **pip**でライブラリをインストールして下さい
-  
+
+## このプログラムについての問い合わせ先
+[僕のgithubプロフィール](https://github.com/Yuta1004)のbioを見て下さい
 
 ## SNAP?
 **S**hirasunaryo **N**etwotk **A**uto login **P**rogram
