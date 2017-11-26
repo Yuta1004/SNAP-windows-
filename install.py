@@ -29,6 +29,7 @@ if __name__ == '__main__':
     print("\n2.ログインに使用するユーザ名とパスワードを入力して下さい\n")
     while not isInput:
         username = input("Username : ")
+        password = []
         password.append(getpass("Passeword : "))
         password.append(getpass("Passeword Again : "))
         if(password[0] == password[1]):
