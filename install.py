@@ -12,7 +12,7 @@ if __name__ == '__main__':
     isInput = False
     python_path = []
     os_env = ""
-    cu_dir = os.path.dirname(os.path.abspath(__file__))
+    cu_dir = os.path.abspath(os.path.dirname(__file__))
     print("SNAP設定\n")
 
     print("1.必要なライブラリをインストールします\n")
@@ -29,31 +29,31 @@ if __name__ == '__main__':
     print("\n2.ログインに使用するユーザ名とパスワードを入力して下さい\n")
     while not isInput:
         username = input("Username : ")
-        password = []
         password.append(getpass("Passeword : "))
         password.append(getpass("Passeword Again : "))
         if(password[0] == password[1]):
             isInput = True
-            with open("pass.txt", "w") as f:
+            with open(cu_dir + "\\pass.txt", "w") as f:
                 f.write(username)
                 f.write("\n")
                 f.write(password[0])
         else:
             print("パスワードが一致しません。もう一度入力して下さい。\n")
+            password = []
 
     print("\n3.必要なファイルを生成します")
     python_path = sys.path
     python_path = python_path[1]
     python_path = re.sub(r"\\(Python|python)..\.zip", "", python_path)
-    with open("jikkou.bat", "w") as f:
+    with open(cu_dir + "\\jikkou.bat", "w") as f:
         f.write(python_path + "\\python.exe")
         f.write(" ")
         f.write(cu_dir + "\\ryo_auto_login.py")
-    with open("jikkou_vbs.vbs", "w") as f:
+    with open(cu_dir + "\\jikkou_vbs.vbs", "w") as f:
         f.write("Set ws = CreateObject(\"Wscript.Shell\")")
         f.write("\n")
         f.write("ws.run \"cmd /c " + cu_dir + "\\jikkou.bat\", vbhide")
     print("\n生成が完了しました")
 
     print("\n全ての設定が正常に終了しました")
-    print("タスクスケジューラに[jikkou_vbs.vbs] を登録してください")
+    print("PhantomJSをインストール後、タスクスケジューラに[jikkou_vbs.vbs] を登録してください")

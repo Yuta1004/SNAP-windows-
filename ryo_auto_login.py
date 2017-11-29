@@ -37,7 +37,7 @@ def main():
 
 
 if __name__ == '__main__':
-    cu_dir = os.path.dirname(os.path.abspath(__file__))
+    cu_dir = os.path.abspath(os.path.dirname(__file__))
     os_env = os.environ.get("Path")
     os_env_list = os_env.split(";")
     phantom_path = cu_dir + "\\phantomjs-2.1.1-windows\\bin"
