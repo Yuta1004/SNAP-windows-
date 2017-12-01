@@ -56,4 +56,4 @@ if __name__ == '__main__':
     print("\n生成が完了しました")
 
     print("\n全ての設定が正常に終了しました")
-    print("PhantomJSをインストール後、タスクスケジューラに[jikkou_vbs.vbs] を登録してください")
+    print("タスクスケジューラに[jikkou_vbs.vbs] を登録してください")
